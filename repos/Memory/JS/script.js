@@ -16,6 +16,8 @@ const pareja = [];
 
 let count = 0;
 
+let score;
+
 window.onload = () => {
     const imagenes = document.querySelectorAll("div.anverso");
     const parents = document.querySelectorAll("div.carta");
@@ -24,6 +26,8 @@ window.onload = () => {
     const parList = Array.from(parents);
 
     const restart = document.getElementById('restart');
+
+    score = document.getElementById('score-value');
 
     restart.addEventListener('click', () => restartGame());
 
@@ -47,7 +51,7 @@ const cardEvent = (parent) => {
         count++;
     } else {
         parent.classList.remove('active');
-        pareja.pop(parent);
+        pareja.pop();
         count--;
     }
     if(count === 2) {
@@ -76,11 +80,13 @@ const comprovar = (pareja) => {
         pareja[1].removeEventListener('click', (e) => cardEvent(e));
         pareja.pop();
         pareja.pop();
+        score.innerHTML = parseInt(score.innerHTML) + 10;
     } else {
         pareja[0].classList.remove('active');
         pareja[1].classList.remove('active');
         pareja.pop();
         pareja.pop();
+        score.innerHTML = parseInt(score.innerHTML) - 5;
     }
 }
 
