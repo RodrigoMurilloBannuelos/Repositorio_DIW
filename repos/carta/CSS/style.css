@@ -1,0 +1,56 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carta, .carta div
+{
+    margin: 20px;
+    width: 223px;
+    height: 310px;
+    transition: all 0.1s linear;
+    filter: brightness(0.8);
+}
+
+.carta:hover
+{
+    filter: brightness(1.4);
+}
+
+.carta
+{
+    filter: brightness(1);
+}
+
+.carta .reverso
+{
+    position: absolute;
+    background-image: url('../res/img/reverso.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.carta .anverso
+{
+    position: absolute;
+    background-image: url('../res/img/loto-oropel.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transform: rotateY(-90deg);
+}
+
+.carta.active .reverso
+{
+    transform: rotateY(90deg);
+    transition: all 0.25s linear;
+}
+
+.carta.active .anverso
+{
+    transform: rotateY(0deg);
+    transition: all 0.25s linear 0.25s;
+}

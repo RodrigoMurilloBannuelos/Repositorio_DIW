@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <div class="carta">
+        <div class="reverso"></div>
+        <div class="anverso"></div>
+    </div>
+		<script>
+			window.onload = () => {
+				const carta = document.querySelector('.carta');
+				carta.addEventListener('click', () => {
+					carta.classList.toggle('active');
+				});
+			}
+		</script>
+</body>
+</html>
