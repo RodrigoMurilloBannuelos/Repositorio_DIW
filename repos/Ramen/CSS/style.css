@@ -8,7 +8,7 @@
 #humo{
     position: absolute;
     top: 210px;
-    left: 50%;
+    left: 53.2%;
     transform: translateX(-70%);
     opacity: 0;
 }
@@ -23,14 +23,16 @@
 {
     position: absolute;
     top: 293px;
-    left: 208px;
+    left: 53.2%;
+    transform: translateX(-50%);
 }
 
 #topins
 {
     position: absolute;
     top: 365px;
-    left: 218px;
+    left: 50%;
+    transform: translateX(-50%);
     filter: brightness(1.5);
 }
 
@@ -38,7 +40,8 @@
 {
     position: absolute;
     top: 365px;
-    left: 218px;
+    left: 50%;
+    transform: translateX(-50%);
     filter: brightness(0.5);
     opacity: 0;
 }
@@ -67,7 +70,8 @@
     position: absolute;
     width: 400px;
     top: 700px;
-    left: 160px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
 }
 
@@ -76,7 +80,9 @@
     position: absolute;
     width: 700px;
     top: 350px;
-    left: 10px;
+
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
     opacity: 0;
 }
