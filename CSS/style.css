@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800');
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*
+h1
+{
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 800;
+	margin: 1rem;
+}*/
+h1 {
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 800;
+	margin: 1rem;
+}
+
+span#first
+{
+	font-size: 72px;
+	background: -webkit-linear-gradient(120deg, #0022ff, #00bbff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+span#second
+{
+  font-size: 72px;
+  background: -webkit-linear-gradient(120deg, #19b7e3, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*background: -webkit-linear-gradient(120deg, #19b7e3, #00ff88);*/
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #000;
+	color: #fff;
+}
+
+#links
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#links a
+{
+	
+	min-width: 260px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1rem;
+	margin: 1rem;
+	padding: 10px 20px;
+	background-color: #1e62f6;
+	border-radius: 10px;
+	text-align: left;
+	align-content: center;
+	transition: 0.3s ease-in-out;
+}
+
+#links a ion-icon
+{
+	font-weight: 800;
+	float: right;
+	transform: scale(1.25) rotate(-45deg);
+}
+
+#links a:hover
+{
+	background-color: #ffffff;
+	color: #1e62f6;
+}
