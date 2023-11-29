@@ -12,24 +12,23 @@ const sources = [
     'spidy.png',
     'viridian-claw.png',
 ];
-const pareja = [];
+let pareja = [];
 
 let count = 0;
 
 let score;
+let bestScore;
+let parents;
 
 window.onload = () => {
     const imagenes = document.querySelectorAll("div.anverso");
-    const parents = document.querySelectorAll("div.carta");
+    parents = document.querySelectorAll("div.carta");
 
     const imgList = Array.from(imagenes);
     const parList = Array.from(parents);
 
-    const restart = document.getElementById('restart');
-
     score = document.getElementById('score-value');
-
-    restart.addEventListener('click', () => restartGame());
+    bestScore = document.getElementById('best-score-value');
 
     imgList.forEach((img) => {
         const mNum = Math.floor(Math.random() * sources.length);
@@ -91,12 +90,17 @@ const comprovar = (pareja) => {
 }
 
 const restartGame = () => {
-    const parents = document.querySelectorAll("div.carta");
     const parList = Array.from(parents);
+    pareja = [];
     parList.forEach((parent) => {
         parent.classList.remove('correct');
         parent.classList.remove('active');
         parent.classList.add('carta');
         parent.addEventListener('click', (e) => cardEvent(e));
     });
+    if(parseInt(score.innerHTML) > parseInt(bestScore.innerHTML)) {
+        bestScore.innerHTML = score.innerHTML;
+    }
+    score.innerHTML = 0;
+
 }
