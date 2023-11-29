@@ -1,0 +1,119 @@
+*,
+::after,
+::before
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#coche
+{
+    position: absolute;
+    top: 180px;
+    left: 720px;
+    width: 180px;
+    animation: coche 10s linear;
+}
+
+#bruce
+{
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 60px;
+    animation: bruce .1s linear 2s;
+    animation-fill-mode: forwards;
+}
+
+#hulk
+{
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 60px;
+    opacity: 0;
+    animation: hulk .1s linear 2s;
+    animation-fill-mode: forwards;
+}
+
+#pata_hulk
+{
+    position: absolute;
+    top: 248px;
+    left: 0;
+    width: 30px;
+    opacity: 0;
+    animation: patada 3s linear 2s;
+    transform-origin: top center;
+    animation-fill-mode: forwards;
+}
+
+@keyframes coche {
+    0% {
+        left: 720px;
+    }
+
+    25% {
+        left: 100px;
+        transform: scaleX(1);
+    }
+
+    45% {
+        left: 10px;
+        transform: scaleX(1);
+    }
+
+    50% {
+        left: 00px;
+        transform: scaleX(0.4);
+    }
+    50.1% {
+        top: 180px;
+        left: 60px;
+        transform: rotateZ(-10800deg) scaleX(0.4);
+    }
+    100% {
+        top: -470px;
+        left: 1060px;
+    }
+
+}
+
+@keyframes bruce {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hulk {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes patada {
+    0% {
+        opacity: 0;
+        transform: rotate(0);
+    }
+    4% {
+        opacity: 1;
+        transform: rotate(60deg);
+    }
+    90% {
+        opacity: 1;
+        transform: rotate(60deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-60deg);
+    }
+}

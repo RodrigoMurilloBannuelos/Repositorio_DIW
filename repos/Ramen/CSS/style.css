@@ -1,0 +1,88 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#humo{
+    position: absolute;
+    top: 210px;
+    left: 50%;
+    transform: translateX(-70%);
+    opacity: 0;
+}
+
+#ramen
+{
+    position: relative;
+
+}
+
+#bol
+{
+    position: absolute;
+    top: 293px;
+    left: 208px;
+}
+
+#topins
+{
+    position: absolute;
+    top: 365px;
+    left: 218px;
+    filter: brightness(1.5);
+}
+
+#topins-quemados
+{
+    position: absolute;
+    top: 365px;
+    left: 218px;
+    filter: brightness(0.5);
+    opacity: 0;
+}
+
+#ramen:hover #humo
+{
+    opacity: 1;
+    transition: 0.2s linear 5s;
+}
+
+
+#ramen:hover #topins
+{
+    filter: brightness(1);
+    transition: 0.2s linear 10s;
+}
+
+#ramen:hover #topins-quemados
+{
+    opacity: 1;
+    transition: 0.2s linear 20s;
+}
+
+#leña
+{
+    position: absolute;
+    width: 400px;
+    top: 700px;
+    left: 160px;
+    z-index: 1;
+}
+
+#fuego
+{
+    position: absolute;
+    width: 700px;
+    top: 350px;
+    left: 10px;
+    z-index: -1;
+    opacity: 0;
+}
+
+#ramen:hover #fuego
+{
+    opacity: 1;
+    transition: 0.2s linear;
+}

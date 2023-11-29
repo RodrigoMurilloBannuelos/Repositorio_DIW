@@ -1,0 +1,84 @@
+.wrapper
+{
+    display: flex;
+    width: min-content;
+}
+
+div
+{
+    gap: 10px;
+}
+
+#c1
+{
+    scale: 1;
+    transition: ease-in-out 3s;
+}
+
+#c1:hover
+{
+    scale: 2;
+}
+
+#c2
+{
+    opacity: 1;
+    transition: ease-in 2s;
+}
+
+#c2:hover
+{
+    opacity: 0;
+}
+
+#c3
+{
+    width: 305px;
+    height: 165px;
+    transform: translateX(0);
+    opacity: 1;
+    background-image: url('../res/img/comic3.png');
+    transition: transform 4s ease-in-out, opacity 3s 1s, background-image 2s 2s;
+}
+
+#c3:hover
+{
+    transform: translateX(100%);
+    opacity: 0.1;
+    background-image: url('../res/img/comic3-transformed.png');
+}
+
+#c4
+{
+    scale: 1;
+    transform-origin: top right;
+    transition: 2s;
+}
+
+#c4:hover
+{
+    scale: 0;
+}
+
+div>div>#c5
+{
+    rotate: 0;
+    transition: 3s;
+}
+
+div>div:hover>#c5
+{
+    rotate: -180deg;
+}
+
+div>div>#c6
+{
+    scale: 1;
+    transform-origin: bottom left;
+    transition: 3s;
+}
+
+div>div:hover>#c6
+{
+    scale: 1.2;
+}

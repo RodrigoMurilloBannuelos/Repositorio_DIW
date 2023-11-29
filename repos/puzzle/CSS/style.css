@@ -1,0 +1,41 @@
+div
+{
+    display: grid;
+    grid: 100px / 1fr 1fr;
+}
+
+#tl
+{
+    position: absolute;
+}
+
+#tr
+{
+    position: absolute;
+    left: 250px;
+}
+
+#bl
+{
+    position: absolute;
+    left: 6px;
+    top: 200px;
+}
+
+#br
+{
+    position: absolute;
+    left: 200px;
+    top: 250px;
+}
+
+img
+{
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+img:hover
+{
+    opacity: 1;
+}

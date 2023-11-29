@@ -1,0 +1,98 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#jarra
+{
+  position: absolute;
+  top: 10%;
+  left: 51%;
+  width: 120px;
+  animation: jarra 5s linear;
+}
+
+#frasco
+{
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+#relleno
+{
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  background-color: #236df6;
+  animation: relleno 3s linear 2s;
+  animation-fill-mode: forwards;
+  z-index: -2;
+}
+
+#chorro {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 0;
+  background-color: #236df6;
+  z-index: -1;
+  border-radius: 75% 0 0 0;
+  animation: chorrito 4s linear 1s;
+}
+
+@keyframes jarra {
+  0% {
+    
+    transform: rotate(0);
+  }
+  25% {
+    
+    transform: rotate(-90deg);
+  }
+  75% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes relleno {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 130px;
+  }
+}
+
+@keyframes chorrito {
+  0% {
+    
+    transform: translateY(0) translateX(-50%);
+    height: 0;
+  }
+  25% {
+    
+    transform: translateY(0) translateX(-50%);
+    height: 528px;
+  }
+  75% {
+    transform: translateY(0) translateX(-50%);
+    height: 528px;
+  }
+  100% {
+    transform: translateY(528px) translateX(-50%);
+    height: 0;
+  }
+}
