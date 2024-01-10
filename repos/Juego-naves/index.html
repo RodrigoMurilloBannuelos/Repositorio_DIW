@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Naves Espaciales</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+	<div id="fin">
+	</div>
+
+	<div id="fin-message">
+		<h1>Has perdido</h1>
+		<p>Has perdido la partida, pero no te preocupes, puedes volver a intentarlo</p>
+	</div>
+
+	<div id="salto">
+	</div>
+	<div id="salto-emergencia">
+	</div>
+
+	<header>
+	</header>
+
+
+	<div class="game-container">
+		<p id="cyclon-time"></p>
+		<div id="info">
+			<label>Supervivientes:</label>
+			<meter id="survivor-meter" min="0" max="100" value="90"></meter>
+			<label>Energía:</label>
+			<meter class="energy-meter" min="0" max="100" value="90"></meter>
+			<label>Integridad del casco:</label>
+			<meter id="damage-meter" min="0" max="100" value="90"></meter>
+			<label>Recalentamiento del motor de salto:</label>
+			<progress id="jump-progress" max="100" ></progress>
+		</div>
+		<button id="emergence" type="button">SALTO DE EMERGENCIA</button>
+		<div id="actions">
+			<button type="button" popovertarget="shield">Escudo</button>
+			<button type="button" popovertarget="propulsor">Propulsor</button>
+			<button type="button" popovertarget="weapons">Arma</button>
+			<button type="button" popovertarget="crew">Tripulación</button>
+			<button type="button" popovertarget="jump-motor">Motor de Salto</button>
+		</div>
+
+    <div popover id="shield">
+      <form id="shield-interface">
+        <h2>Interfaz del Escudo</h2>
+
+        <label for="shield-crew-member-function">Tripulantes:</label>
+        <button type="button">Añadir tripulante</button>
+        <select id="shield-crew-member-function">
+          <option value="disponible">Nuc Shazam</option>
+          <option value="ocupado">Salt Peper</option>
+          <option value="herido">Juan Salomón</option>
+        </select><br>
+
+        <label>Energía:</label>
+        <meter class="energy-meter" min="0" max="100"></meter><br>
+
+        <label for="proa-shield">Proa:</label>
+        <input type="range" id="proa-shield" min="0" max="100"><br>
+        <label for="popa-shield">Popa:</label>
+        <input type="range" id="popa-shield" min="0" max="100"><br>
+        <label for="babor-shield">Babor:</label>
+        <input type="range" id="babor-shield" min="0" max="100"><br>
+        <label for="estribor-shield">Estribor:</label>
+        <input type="range" id="estribor-shield" min="0" max="100"><br>
+        <button id="equilazer" type="button">Igualar Todos</button>
+      </form>
+    </div>
+
+    <div popover id="propulsor">
+      <form id="propulsor-interface">
+        <h2>Interfaz del Propulsor</h2>
+
+        <label for="propulsor-crew-member-function">Tripulantes:</label>
+        <button type="button">Añadir tripulante</button>
+        <select id="propulsor-crew-member-function">
+          <option value="disponible">Nuc Shazam</option>
+          <option value="ocupado">Salt Peper</option>
+          <option value="herido">Juan Salomón</option>
+        </select><br>
+
+        <label>Energía:</label>
+        <meter class="energy-meter" min="0" max="100" ></meter><br>
+
+        <label for="speed-slider">Velocidad:</label>
+        <input type="range" id="speed-slider" min="0" max="1000" readonly><br>
+        <button id="acel8" type="button">+100 km/h</button>
+        <button id="decel8" type="button">-100 km/h</button><br>
+        <label for="direction-slider">Dirección:</label>
+        <input type="range" id="direction-slider" min="-180" max="180"><br>
+        <button type="button">Girar Izquierda</button>
+        <button type="button">Girar Derecha</button><br>
+      </form>
+    </div>
+
+    <div popover id="weapons">
+      <form id="arma-interface">
+        <h2>Interfaz del Arma</h2>
+
+        <label for="weapons-crew-member-function">Tripulantes:</label>
+        <button type="button">Añadir tripulante</button>
+        <select id="weapons-crew-member-function">
+          <option value="disponible">Nuc Shazam</option>
+          <option value="ocupado">Salt Peper</option>
+          <option value="herido">Juan Salomón</option>
+        </select><br>
+
+        <label>Energía:</label>
+        <meter class="energy-meter" min="0" max="100"></meter><br>
+
+        <input type="radio" id="weapon1" name="weapon" readonly>
+        <label for="weapon1">Láseres</label><br>
+        <input type="radio" id="weapon2" name="weapon" readonly>
+	      <label for="weapon2">Misiles Nucleares</label><span id="ammo" style="display: none">10/10</span><br>
+        <meter id="ammunition-meter" min="0" max="100" ></meter><br>
+        <button id="shoot" type="button">Disparar</button>
+        <button id="reload" type="button">Recargar</button><br>
+        <button id="change-weapon" type="button">Cambiar Arma</button>
+      </form>
+    </div>
+
+    <div popover id="crew">
+	    <h2>Interfaz de la Tripulación</h2>
+      <form id="tripulacion-interface">
+        <label for="crew-member-name">Nombre:</label>
+        <input type="text" id="crew-member-name">
+        <label for="crew-crew-member-function">Función:</label>
+        <select id="crew-crew-member-function">
+          <option value="disponible">Ingeniero</option>
+          <option value="ocupado">Médico</option>
+          <option value="herido">Militar</option>
+        </select>
+        <label for="crew-member-skill">Nivel de Habilidad:</label>
+        <input type="number" id="crew-member-skill" min="0" max="100">
+
+        <label for="crew-member-status">Estado:</label>
+        <select id="crew-member-status">
+          <option value="disponible">Disponible</option>
+          <option value="ocupado">Ocupado</option>
+          <option value="herido">Herido</option>
+        </select>
+        <label for="crew-member-birthdate">Fecha de Nacimiento:</label>
+        <input type="date" id="crew-member-birthdate">
+        <button type="button" id='registrar'>Registrar</button>
+      </form>
+    </div>
+
+    <div popover id="jump-motor">
+      <form id="motor-salto-interface">
+        <h2>Interfaz del Motor de Salto</h2>
+
+        <label for="motor-crew-member-function">Tripulantes:</label>
+        <button type="button">Añadir tripulante</button>
+        <select id="motor-crew-member-function">
+          <option value="disponible">Nuc Shazam</option>
+          <option value="ocupado">Salt Peper</option>
+          <option value="herido">Juan Salomón</option>
+        </select><br>
+
+        <label>Energía:</label>
+        <meter class="energy-meter" min="0" max="100" ></meter><br>
+        <label for="motor">Refrigerar motor:</label>
+        <input type="range" id="motor" min="0" max="10" ><span id="motor-number">0</span>
+	      <br>
+
+        <button type="button" id="jump">Saltar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="planetas">
+	  <button popovertarget="pb" id="p1"><img src="img/planeta1.png" alt="p1"></button>
+	  <button popovertarget="pm" id="p2"><img src="img/planeta2.png" alt="p1"></button>
+	  <button popovertarget="pb" id="p3"><img src="img/planeta3.png" alt="p1"></button>
+	  <button popovertarget="pm" id="p4"><img src="img/planeta4.png" alt="p1"></button>
+  </div>
+
+	<div popover id="pb" class="planet">
+		<p>Has encontrado 30 supervivientes, 30 de energia y 30 de municion</p>
+	</div>
+	<div popover id="pm" class="planet">
+		<h1>Preparate para la batalla</h1>
+	</div>
+	<footer>
+
+	</footer>
+  <script type="module" src="./JS/script.js"></script>
+</body>
+</html>
