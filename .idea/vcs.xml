@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/RMB0501" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/Tailwind/Instagram-Rosalia-Tailwind" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/Tailwind/Practica2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/Tailwind/Practrica1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/Tailwind/RMB0403" vcs="Git" />
   </component>
 </project>
