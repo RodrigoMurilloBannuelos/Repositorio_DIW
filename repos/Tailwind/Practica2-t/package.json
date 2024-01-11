@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "tailwindcss": "3.3.3"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./CSS/global.css -o ./CSS/style.css",
+    "dev": "tailwindcss -i ./CSS/global.css -o ./CSS/style.css --watch"
+  }
+}
